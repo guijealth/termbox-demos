@@ -47,6 +47,3 @@ Waited 9.5 minutes
 | SNOMED INT  | 1min  |
 
 ## The Gallery (coming soon!)
-
-
-NEXT: [TX Operations Demo](../004-tx-operations/README.md)
