@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: termbox
+    volumes:
+    - termbox_demo_001_postgres_data:/var/lib/postgresql
+  termbox:
+    depends_on:
+      - postgres
+    image: ghcr.io/healthsamurai/termbox:edge
+    pull_policy: always
+    ports:
+      - "3000:3000"
+    environment:
+      PG_USER: postgres
+      PG_PASSWORD: postgres
+      PG_HOST: postgres
+volumes:
+  termbox_demo_001_postgres_data: {}
